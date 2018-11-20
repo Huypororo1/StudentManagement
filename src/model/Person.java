@@ -1,4 +1,4 @@
-package mainApp;
+package model;
 
 public abstract class Person {
 	

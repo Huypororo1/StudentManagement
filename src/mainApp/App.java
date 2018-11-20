@@ -1,28 +1,33 @@
 package mainApp;
 
+import controller.LecturerController;
+import controller.StudentController;
+import menu.AppMenu;
 import util.InputData;
 
 public class App {
 	
 	private StudentController stController;
 	private LecturerController lecController;
-	private String decor;
+	private AppMenu menu;
 	
 	public App(){
 		stController = new StudentController();
 		lecController = new LecturerController();
-		decor = "===================";
+		menu = new AppMenu();
 	}
 	
 	public static void main(String[] args) {
 		App app = new App();
 		app.beginApp();
+		System.out.print("The application is closed.");
 	}
 	
 	public void beginApp() {
 		String a = "";
 		while(!a.equals("3")) {
 			a = mainMenu();
+			System.out.println();
 			switch(a) {
 			case "1":
 				stController.begin();
@@ -33,18 +38,9 @@ public class App {
 			}
 		}
 	}
-		
-	public void showMainMenu(){
-		System.out.println(decor);
-		System.out.println("1) Manager Students.");
-		System.out.println("2) Manager lecturers.");
-		System.out.println("3) Exit.");
-		System.out.println(decor);
-		System.out.print("Choose (1 -> 3): \n");
-	}
 	
 	public String mainMenu() {
-		showMainMenu();
+		menu.printMenu();
 		return InputData.scanString("Input: ");
 	}
 }

@@ -1,4 +1,4 @@
-package mainApp;
+package model;
 
 public class Student extends Person{
 	private String phone;
@@ -15,6 +15,10 @@ public class Student extends Person{
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	
+	public String[] getCol() {
+		return new String[] {"Student ID", "Student Name", "Student Age", "Student Email", "Student Phone"};
 	}
 
 }

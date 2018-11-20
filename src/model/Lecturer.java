@@ -1,4 +1,4 @@
-package mainApp;
+package model;
 
 public class Lecturer extends Person{
 	
@@ -16,5 +16,9 @@ public class Lecturer extends Person{
 
 	public void setCourse(String course) {
 		this.course = course;
+	}
+	
+	public String[] getCol() {
+		return new String[] {"Lecturer ID", "Lecturer Name", "Lecturer Age", "Lecturer Email", "Lecturer Course"};
 	}
 }
